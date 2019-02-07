@@ -1,0 +1,23 @@
+.Camunda {
+    margin: 20px auto;
+    border: 6px solid white;
+    padding: 8px;
+    
+    position: absolute;
+    left: 40px;
+    right: 40px;
+    top: 40px;
+    bottom: 0;
+    max-width: 1200px;
+
+    box-shadow: 
+        inset 1px 1px 4px black,
+        inset -1px -1px 4px black;
+
+    animation: fadein 0.8s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
