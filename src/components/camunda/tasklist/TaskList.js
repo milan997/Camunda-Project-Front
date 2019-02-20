@@ -1,25 +1,32 @@
 import React from 'react';
-import TaskGroup from './taskgroup/TaskGroup';
+import axios from 'axios';
+
+import { MY_TASKS_URL} from '../../../ROUTES';
+
+import TaskItem from './taskitem/TaskItem';
 import './TaskList.css';
 
 class TaskList extends React.Component {
 
+    state = { tasks: [] };
+
     componentDidMount() {
-        // ukljucimo loading spiner
-        // poslati zahtev ka apiju 
-        // dobijemo moje taskove i grupne taskove
-        // iskljucimo loading spinner
-        // dve liste
-        // prikazujemo naslov MyTasks ispod toga moji taskovi, i isto za Group Tasks
-        // ako je jedna od listi prazna ne prikazujemo ni naslov
-        // ako su obe prazne prikazuje se poruka da nema taskova
+        axios.get(MY_TASKS_URL, { withCredentials: true })
+            .then(response => {
+                console.log(response.data);
+                this.setState({tasks: response.data});  
+            })
+            .catch(response => {
+
+            });
     }
 
     render() {
         return (
-            <div className="TaskList">
-                <TaskGroup />
-                <TaskGroup />
+            <div className="TaskList flex-container">
+                {this.state.tasks.map(task => (
+                    <TaskItem key={task.id} task={task}/>
+                ))}
             </div>
         );
     }

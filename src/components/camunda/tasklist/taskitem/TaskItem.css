@@ -1,0 +1,29 @@
+.TaskItem {
+   background-color: #DDD;
+   border-bottom: 1px dotted black;
+   padding: 10px;
+   text-align: left;
+}
+
+.TaskItem .taskTitle {
+    color: red;
+    font-weight: 500;
+}
+
+.TaskItem > * {
+    margin: 0px;
+}
+
+.TaskItem.flex-item {
+
+}
+
+.TaskItem .date {
+    font-size: 20px;
+}
+
+.TaskItem:hover {
+    background-color: rgb(244, 244, 244);
+    font-style: italic;
+    
+}
