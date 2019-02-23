@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
+
+.UserTaskForm * {
+	box-sizing: border-box;
+	font-size: 16px;
+}
+
+.UserTaskForm table, .UserTaskForm th, .UserTaskForm td {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+.UserTaskForm table {
+    border: 2px solid black;
+    width: 100%;
+    max-width: 768px ;
+}
+
+.UserTaskForm td:first-child  { 
+    width: 33.33%;
+    background-color:  #F1F1F1;
+    text-align: right;
+    padding: 20px 20px 20px 20px;
+}
+.UserTaskForm td:last-child { 
+    width: 66.67%;
+}
+
+.UserTaskForm textarea {
+    border: 1;
+    height: 100%;
+    width: 100%;
+    min-height: 100%;
+    resize: vertical; 
+}
+
+.UserTaskForm input[type="text"] {
+    width: 100%;
+    height: 100%;
+}	
+
+
+/* READONLY FIELDS */
+input[readonly], select[disabled] {
+	background-color: white;
+	border: 0;
+	font-size: 22px;
+	margin: 0px 10px 0px 10px;
+	font-family: 'Shadows Into Light', cursive;
+}
+
+select[disabled]::-ms-expand {
+    display: none;
+}
+
+select[disabled] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}

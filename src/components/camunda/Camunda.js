@@ -6,19 +6,19 @@ import './Camunda.css';
 
 class Camunda extends React.Component {
     state = {
-        loadedForm: null,
+        selectedTask: false,
     }
 
-    loadForm = (form) => {
-        // nece biti bas ovako lako, ne znam u kom obliku je form
-        this.setState({loadedForm: form});
+    selectTask = (task) => {
+        this.setState({selectedTask: task});
     }
 
     render() {
         return (
             <main className="Camunda">
-                <TaskList loadForm={this.loadForm}/>
-                <WorkSpace form={this.state.loadedForm}/>
+                <TaskList selectTask={this.selectTask} loadForm={this.loadForm} />
+                <WorkSpace task={this.state.selectedTask} />
+
             </main>
         );
     }

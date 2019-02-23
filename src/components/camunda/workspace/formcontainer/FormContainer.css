@@ -1,0 +1,13 @@
+.FormContainer button {
+    font-size: inherit;
+    font-family: inherit;
+    background-color: rgb(255, 70, 70);
+    box-shadow: inset 1px 1px 1px rgb(255, 132, 132);
+    color: white;
+    font-weight: 500;
+    margin-top: 12px;
+}
+
+#formHolder { 
+    height: 60%;
+}

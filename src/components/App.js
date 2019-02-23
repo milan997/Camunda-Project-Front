@@ -20,7 +20,7 @@ class App extends React.Component {
     }
   }
 
-logIn = (user) => {
+  logIn = (user) => {
     sessionStorage.setItem("loggedInUser", JSON.stringify(user));
     this.setState({ loggedInUser: user });
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-import { LOGOUT_URL } from '../../ROUTES'
+import { LOGOUT_URL } from '../../ROUTES';
 
 import './Nav.css';
 
@@ -26,7 +26,7 @@ class Nav extends React.Component {
           </li>
           <li style={{ float: 'right' }}>
             <div className="dropdown">
-              <a href="#top" >♚{firstName + ' ' + lastName}</a>
+              <a href="#top" >♞{firstName + ' ' + lastName}</a>
               <a className="dropdown-content" href="#top" onClick={this.handleClick} >logout</a>
             </div>
           </li>

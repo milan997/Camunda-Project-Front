@@ -11,12 +11,9 @@
 }
 
 .TaskItem > * {
-    margin: 0px;
+    margin: auto;
 }
 
-.TaskItem.flex-item {
-
-}
 
 .TaskItem .date {
     font-size: 20px;
@@ -24,6 +21,12 @@
 
 .TaskItem:hover {
     background-color: rgb(244, 244, 244);
-    font-style: italic;
-    
+    font-style: italic;    
+}
+
+
+.TaskItem.selected {
+    background-color: white;
+    font-style: italic;  
+    border-left: 1px solid red;  
 }
