@@ -1,0 +1,55 @@
+Task 01 - 11-02 all required
+Task 02 - referent proverava uslove 
+    - 11-02 all readonly + uslov boolean
+    - 11-03 all required osim polja koje ima, a ima dosta !
+Task 03 - rukovodioc sp utvrdjuje naslov i komisiju
+    - 11-03 all readonly
+    - 11-04 all required osim polja koje ima
+Task 04 - referent zavodi naslov i clanove komisije
+    - 11-04 - all readonly samo submit
+Task 05 - dekan potvrdjuje sastav komisije
+    - 11-04 - all readonly + uslov
+Task 06 - mentor formira zadatak
+    - 11-05 - readonly + required dva polja
+Task 07A - konsultacije
+    - Konsultacije.js , readonly required
+Task 07B - konsultacije
+    - Konsultacije.js, plus odluka : vrati na doradu, prihvati, obustavi
+Task 08 - student formira elaborat
+    - bukva
+Task 09 - multi instance, clanovi citaju readonly
+    - komentariClanova
+Task 10 - mentor odlucuje da li ce biti izmena
+    - komentariClanova + odluka
+Task 10a - mentor objasnjava zasto nisu uvazene zalbe
+    - konsultacije.js samo bez studenta
+Task 11 - upload fajla
+    - upload dugme
+Task 12 - referentSS zakazuje odbranu
+    - 11-09
+Task 12a 
+    - kao task 3 slicno, samo je naslov readonly 
+Task 12b - 
+    - isto kao task05
+Task 13 - odbrana diplomskog
+    - 11-10
+Task 14 - student biblioteka
+    - stavi neko dugme samo
+Task 15 
+    - referent studentu izdaje potvrdu
+Task 16 
+    - referent unosi podatke
+
+
+UCITATI RUKOVODIAOCE U PROCESS VARIABE
+    rukovodstvo
+
+multi instance task:
+    napravices formu koja ima 4 text fielda, za predsednika komisije, jednog clana, i jos dva potencijalna clana
+    nekako sredis da svako puni svoj deo, zna se koji je ko jer su ti ljudi u procesnim varijablama (clan 2 sme da edituje samo svoj deo)
+    svaki clan komsije vidi primedbe prethodnih da se ne bi ponavljao
+    kada i poslednji submituje, mentoru se dostavlja taj papir i jedan bool da li je uvazio zalbe
+
+    kada budes dodeljivao instance task varijablama predsednikKomisije, clanKomisije1, clanKomisije2, i clanKomisije3,
+        treba  povesti racuna da poslednja dva mozda ne postoje, tako da bi bilo mozda dobro neki listener pre tog taska pa mu 
+            dinamicki dodelit assigneeje

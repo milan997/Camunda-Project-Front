@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="forms.css">
+</head>
+
+<body>
+    <form class="UserTaskForm">
+        <h2>РЕШЕЊЕ О ИМЕНОВАЊУ КОМИСИЈЕ ЗА ОЦЕНУ И OДБРАНУ ЗАВРШНОГ(BACHELOR) РАДА</h2>
+        <table>
+            <tbody><tr><td colSpan="2">
+                На основу предлога Наставно научног већа департмана, декан Факултета техничких наука је донео Решење којим је у Комисију
+                заoцену иодбрану завршног (Bachelor) рада одредио наведене чланове.  
+            </td></tr></tbody>
+        </table>
+        
+        <table>
+            <tbody>
+                <tr>
+                    <td>Студент:</td>
+                    <td>
+                        <input type="text" name="imePrezimeStudenta" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Број индекса:</td>
+                    <td>
+                        <input type="text" name="brIndeksa" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Наслов завршног (bachelor) рада:</td>
+                    <td>
+                        <input type="text" name="naslovRada" required />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>ЧЛАНОВИ КОМИСИЈЕ:</h3>
+        <table>
+            <tbody>
+                <tr>
+                    <td>Председник:</td>
+                    <td>
+                        <select required name="predsednikKomisije" cam-choices="profesori" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Члан:</td>
+                    <td>
+                        <select required name="clanKomisije1" cam-choices="profesori" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Члан:</td>
+                    <td>
+                        <select required name="clanKomisije2" cam-choices="profesori" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Члан:</td>
+                    <td>
+                        <select required name="clanKomisije3" cam-choices="profesori" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ментор:</td>
+                    <td>
+                        <select type="text" disabled name="mentor" cam-choices="profesori" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table>
+            <tbody><tr>
+                <td>Место одбране:</td>
+                <td>
+                    <input type="text" name="mestoOdbrane" ></select>
+                </td>
+            </tr></tbody>
+        </table>
+
+        <table>
+            <tbody>
+                <tr>
+                    <td>Време одбране:</td>
+                    <td>
+                        <input type="text" name="vremeOdbrane"></select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <span class="formName">Образац Q2.НА.11-09 - Издање 1</span>
+    </form>
+</body>
+
+</html>

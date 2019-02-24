@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="forms.css">
+</head>
+
+<body>
+    <form class="UserTaskForm">
+        <h2>ИЗВЕШТАЈ КОМИСИЈЕО ОЦЕНИ И ОДБРАНИ ЗАВРШНОГ(BACHELOR)РАДА</h2>
+        
+        <table>
+            <tbody>
+                <tr>
+                    <td>Врста студија:</td>
+                    <td>
+                        <select name="tipStudija">
+                            <option value="oas">Osnovne akademske studije</option>
+                            <option value="oss">Osnovne strukovne studije</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Студент:</td>
+                    <td>
+                        <input type="text" name="imePrezimeStudenta" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Број индекса:</td>
+                    <td>
+                        <input type="text" name="brIndeksa" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>НАСЛОВ ЗАВРШНOГ (BACHELOR) РАДА:</h3>
+        <input type="text" name="naslovRada" readonly />
+        
+        <h3>ИЗВЕШТАЈ И ЗАКЉУЧАК КОМИСИЈЕ:</h3>
+        <textarea type="text" required name="izvestajKomisije"></textarea>
+        
+        <table>
+            <tbody>
+                <tr>
+                    <td>Оцена теоријских основа завршног(Bachelor)рада:</td>
+                    <td>
+                        <input type="number" min="6" max="10" name="ocenaTeorija"></select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Оцена израде и одбране завршног (Bachelor) рада:</td>
+                    <td>
+                        <input type="number" min="6" max="10" name="ocenaPrakticni"></select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Коначна оцена завршног (Bachelor)рада:</td>
+                    <td>
+                        <input type="number" min="6" max="10" name="ocenaKonacna"></select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>ЧЛАНОВИ КОМИСИЈЕ:</h3>
+        <table>
+            <tbody>
+                <tr>
+                    <td>Председник:</td>
+                    <td>
+                        <select required name="predsednikKomisije" cam-choices="profesori" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Члан:</td>
+                    <td>
+                        <select required name="clanKomisije1" cam-choices="profesori" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Члан:</td>
+                    <td>
+                        <select required name="clanKomisije2" cam-choices="profesori" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Члан:</td>
+                    <td>
+                        <select required name="clanKomisije3" cam-choices="profesori" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ментор:</td>
+                    <td>
+                        <select type="text" disabled name="mentor" cam-choices="profesori" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <span class="formName">Образац Q2.НА.11-10 - Издање 1</span>
+    </form>
+</body>
+
+</html>

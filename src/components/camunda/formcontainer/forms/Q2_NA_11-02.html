@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="forms.css">
+</head>
+
+<body>
+	<form class="UserTaskForm">
+		<h2>ПРИЈАВА ЗА ИЗРАДУ ЗАВРШНОГ (BACHELOR) РАДА</h2>
+		<table>
+			<tbody>
+				<tr>
+					<td>Врста студија:</td>
+					<td>
+						<select name="tipStudija">
+							<option value="oas">Osnovne akademske studije</option>
+							<option value="oss">Osnovne strukovne studije</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Име и презиме студента:</td>
+					<td>
+						<input type="text" name="imePrezimeStudenta" required />
+					</td>
+				</tr>
+				<tr>
+					<td>Број индекса:</td>
+					<td>
+						<input type="text" name="brIndeksa" required/>
+					</td>
+				</tr>
+				<tr>
+					<td>Студијски програм:</td>
+					<td>
+						<input type="text" name="studijskiProgram" required/>
+					</td>
+				</tr>
+				<tr>
+					<td>Студијска група/подгрупа:</td>
+					<td>
+						<input type="text" name="studijskaGrupa" required/>
+					</td>
+				</tr>
+				<tr>
+					<td>Област из које желим да радим завршни (Bachelor) рад:</td>
+					<td>
+						<input type="text" name="oblast" required/>
+					</td>
+				</tr>
+				<tr>
+					<td>Наставник код кога желим да радим завршни (Bachelor) рад:</td>
+					<td>
+						<select required
+							name="mentor" 
+							cam-choices="profesori">
+							<option value="primer">primer</option>
+							<option value="primer">primer</option>
+						</select>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<span class="formName">Образац Q2.НА.11-02 - Издање 1</span>
+	</form>
+</body>
+
+</html>

@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 
-import WorkSpace from './workspace/WorkSpace';
+import FormContainer from './formcontainer/FormContainer';
 import TaskItem from './taskitem/TaskItem';
 import { MY_TASKS_URL, START_PROCESS_URL } from '../../ROUTES';
 
@@ -18,6 +18,10 @@ class Camunda extends React.Component {
         this.setState({selectedTask: task});
     }
 
+    formSubmitted = () => {
+        this.updateTasks();
+    }
+
     componentDidMount() {
         // ako je ulogovani user student, dajemo mu dugme da pokrene proces
         const loggedInUser = JSON.parse(sessionStorage.getItem('loggedInUser'));
@@ -28,11 +32,10 @@ class Camunda extends React.Component {
         this.updateTasks();
     }
 
-
     updateTasks = () => {
         axios.get(MY_TASKS_URL, { withCredentials: true })
             .then(response => {
-                this.setState({ tasks: response.data });
+                this.setState({ tasks: response.data, selectedTask: false });
             })
             .catch(response => console.log({response}));
     }
@@ -45,11 +48,23 @@ class Camunda extends React.Component {
             .catch((response) => console.log(response));
     }
 
-
     render() {
+        let workspace = <div className="WorkSpace"></div>;
+        if (this.state.selectedTask) {
+            const { name, createTime, assignee, formKey } = this.state.selectedTask;
+            workspace = (
+                <div className="WorkSpace">
+                    <span style={{ float: 'right' }}>{assignee ? '♞' + assignee : 'unclaimed'}</span>
+                    <h3 style={{ float: 'left' }} className="title">{name}</h3>
+                    <div style={{ clear: 'both' }} />
+                    <p className="date">⧗{createTime}</p>
+                    <FormContainer formSubmitted={this.formSubmitted} task={this.state.selectedTask} formKey={formKey} />
+                </div>
+            );
+        }
         return (
             <main className="Camunda">
-            
+
                 <div className="TaskList">
                     <button ref="startProcessBtn" style={{ display: 'none' }} className="start-process-btn" onClick={this.handleStartProcess}>Zapocni prijavu</button>
                     <div className="flex-container">
@@ -66,9 +81,9 @@ class Camunda extends React.Component {
                     </div>
                 </div>
 
-
-                <WorkSpace task={this.state.selectedTask} />
-
+                {workspace}
+                
+    
             </main>
         );
     }

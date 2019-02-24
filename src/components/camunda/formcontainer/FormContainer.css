@@ -5,9 +5,13 @@
     box-shadow: inset 1px 1px 1px rgb(255, 132, 132);
     color: white;
     font-weight: 500;
-    margin-top: 12px;
+    margin: 12px 0px;
 }
 
 #formHolder { 
     height: 60%;
+}
+
+.FormContainer {
+    box-sizing:border-box;
 }
