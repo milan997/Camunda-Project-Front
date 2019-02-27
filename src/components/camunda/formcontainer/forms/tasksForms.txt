@@ -39,17 +39,3 @@ Task 15
     - referent studentu izdaje potvrdu
 Task 16 
     - referent unosi podatke
-
-
-UCITATI RUKOVODIAOCE U PROCESS VARIABE
-    rukovodstvo
-
-multi instance task:
-    napravices formu koja ima 4 text fielda, za predsednika komisije, jednog clana, i jos dva potencijalna clana
-    nekako sredis da svako puni svoj deo, zna se koji je ko jer su ti ljudi u procesnim varijablama (clan 2 sme da edituje samo svoj deo)
-    svaki clan komsije vidi primedbe prethodnih da se ne bi ponavljao
-    kada i poslednji submituje, mentoru se dostavlja taj papir i jedan bool da li je uvazio zalbe
-
-    kada budes dodeljivao instance task varijablama predsednikKomisije, clanKomisije1, clanKomisije2, i clanKomisije3,
-        treba  povesti racuna da poslednja dva mozda ne postoje, tako da bi bilo mozda dobro neki listener pre tog taska pa mu 
-            dinamicki dodelit assigneeje

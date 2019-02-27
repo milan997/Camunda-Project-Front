@@ -49,10 +49,7 @@ const Task02 = () => {
                     <tr>
                         <td>Наставник код кога желим да радим завршни (Bachelor) рад:</td>
                         <td>
-                            <select disabled
-                                name="mentor"
-                                cam-choices="profesori">
-                            </select>
+                            <input type="text" name="mentor" readOnly />
                         </td>
                     </tr>
                 </tbody>

@@ -47,23 +47,42 @@
     height: 100%;
 }	
 
-.UserTaskForm h2, .UserTaskForm h3 {
+.UserTaskForm h3 {
+    margin-top: 8px;
     margin-bottom: 0px;
     font-size: 22px;
+}
+
+.UserTaskForm h2 {
+    font-size: 24px;
+}
+
+.UserTaskForm a.downloadLink {
+    display: block;
+    text-decoration: none;
+    padding: 5px;
+    text-transform: uppercase;
+    font-size: 20px;
+    background-color: rgb(255, 70, 70);
+    box-shadow: inset 2px 2px 1px rgb(255, 199, 199);
+    color: white;
+    font-weight: 500;
 }
 
 span.formName {
     float: right;
 }
 
-
 /* READONLY FIELDS */
 input[readonly], textarea[readonly], select[disabled] {
-	background-color: white;
+    background-color: white;
 	border: 0;
 	font-size: 22px;
 	padding: 0px 10px 0px 10px;
 	font-family: 'Shadows Into Light', cursive;
+}
+textarea[readonly] {
+	background-color: #EEE;
 }
 
 select[disabled]::-ms-expand {

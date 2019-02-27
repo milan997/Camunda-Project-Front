@@ -4,28 +4,29 @@ import axios from 'axios';
 
 import FormContainer from './formcontainer/FormContainer';
 import TaskItem from './taskitem/TaskItem';
-import { MY_TASKS_URL, START_PROCESS_URL } from '../../ROUTES';
+import { MY_TASKS_URL, START_PROCESS_URL, TASKS_URL } from '../../ROUTES';
 
 import './Camunda.css';
 
 class Camunda extends React.Component {
-    state = {
-        tasks: [],
-        selectedTask: false,
+    constructor(props) {
+        super(props);
+        this.state = {
+            tasks: [],
+            selectedTask: false,
+            loggedInUser: JSON.parse(sessionStorage.getItem('loggedInUser')),
+        };
+        
     }
-
+    
     selectTask = (task) => {
         this.setState({selectedTask: task});
     }
 
-    formSubmitted = () => {
-        this.updateTasks();
-    }
-
     componentDidMount() {
         // ako je ulogovani user student, dajemo mu dugme da pokrene proces
-        const loggedInUser = JSON.parse(sessionStorage.getItem('loggedInUser'));
-        const userIsStudent = (loggedInUser != null && loggedInUser.groups[0] === "student");
+        const loggedInUser = this.state.loggedInUser;
+        const userIsStudent = (loggedInUser.groups[0] === "student" || loggedInUser.groups[0] === "camunda-admin");
         if (userIsStudent)
             this.refs.startProcessBtn.style.display = 'block';
 
@@ -42,10 +43,15 @@ class Camunda extends React.Component {
 
     handleStartProcess = () => {
         axios.post(START_PROCESS_URL, {}, { withCredentials: true })
-            .then((response) => {
-                this.updateTasks();
-            })
-            .catch((response) => console.log(response));
+            .then(this.updateTasks)
+            .catch(console.log);
+    }
+
+    handleClaimTask = () => {
+        const url = `${TASKS_URL}/${this.state.selectedTask.id}/claim`;
+        axios.post(url, {}, { withCredentials: true })
+            .then(this.updateTasks)
+            .catch(console.log);
     }
 
     render() {
@@ -54,11 +60,19 @@ class Camunda extends React.Component {
             const { name, createTime, assignee, formKey } = this.state.selectedTask;
             workspace = (
                 <div className="WorkSpace">
-                    <span style={{ float: 'right' }}>{assignee ? '♞' + assignee : 'unclaimed'}</span>
+                    <span style={{ float: 'right' }}>{assignee  
+                        ? '♞' + assignee 
+                        : <button 
+                            ref="claimTaskBtn"
+                            name="claimTask"
+                            onClick={this.handleClaimTask}>
+                            Claim
+                            </button>}
+                    </span>
                     <h3 style={{ float: 'left' }} className="title">{name}</h3>
                     <div style={{ clear: 'both' }} />
                     <p className="date">⧗{createTime}</p>
-                    <FormContainer formSubmitted={this.formSubmitted} task={this.state.selectedTask} formKey={formKey} />
+                    <FormContainer updateTasks={this.updateTasks} task={this.state.selectedTask} formKey={formKey} />
                 </div>
             );
         }

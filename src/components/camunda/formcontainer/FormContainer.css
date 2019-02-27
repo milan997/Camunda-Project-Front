@@ -15,3 +15,7 @@
 .FormContainer {
     box-sizing:border-box;
 }
+
+.FormContainer .uslovDiv label {
+    font-size: 20px;
+}

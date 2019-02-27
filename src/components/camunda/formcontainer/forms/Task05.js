@@ -71,7 +71,7 @@ const Task05 = () => {
             </table>
             <span className="formName">Образац Q2.НА.11-04 - Издање 1</span>
             <div className="uslovDiv">
-                <label >Uslov</label>
+                <label htmlFor="uslov" >Uslov</label>
                 <input type="checkbox" name="uslov" />
             </div>
         </form>);

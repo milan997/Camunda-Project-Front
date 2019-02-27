@@ -22,6 +22,15 @@
     to   { opacity: 1; }
 }
 
+.Camunda button[name="claimTask"] {
+    font-size: inherit;
+    font-family: inherit;
+    background-color: rgb(255, 70, 70);
+    box-shadow: inset 1px 1px 1px rgb(255, 132, 132);
+    color: white;
+    font-weight: 500;
+    margin: 0px;
+}
 
 
 

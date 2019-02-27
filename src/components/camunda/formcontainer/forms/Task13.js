@@ -4,8 +4,10 @@ import './forms.css';
 const Task13 = () => {
     return (
         <form className="UserTaskForm">
-            <h2>ИЗВЕШТАЈ КОМИСИЈЕО ОЦЕНИ И ОДБРАНИ ЗАВРШНОГ(BACHELOR)РАДА</h2>
+            <a className="downloadLink" href="http://google.com" style={{ float: 'right' }} 
+                target="_blank" rel="noopener noreferrer">preuzmi rad</a>
 
+            <h2>ИЗВЕШТАЈ КОМИСИЈЕ О ОЦЕНИ И ОДБРАНИ ЗАВРШНОГ (BACHELOR) РАДА</h2>
             <table>
                 <tbody>
                     <tr>
@@ -33,7 +35,7 @@ const Task13 = () => {
             </table>
 
             <h3>НАСЛОВ ЗАВРШНOГ (BACHELOR) РАДА:</h3>
-            <input type="text" name="naslovRada" readonly />
+            <input type="text" name="naslovRada" readOnly />
 
             <h3>ИЗВЕШТАЈ И ЗАКЉУЧАК КОМИСИЈЕ:</h3>
             <textarea type="text" required name="izvestajKomisije"></textarea>

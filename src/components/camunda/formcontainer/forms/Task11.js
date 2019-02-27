@@ -4,8 +4,8 @@ import './forms.css';
 const Task11 = () => {
     return (
         <form className="UserTaskForm">
-            <label for="upload">Upload</label>
-            <input type="checkbox" name="upload" />
+            <label htmlFor="upload">Upload</label>
+            <input type="file" name="upload" accept="application/pdf" required/>
         </form>);
 }
 
