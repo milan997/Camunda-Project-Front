@@ -19,9 +19,7 @@ class Camunda extends React.Component {
         
     }
     
-    selectTask = (task) => {
-        this.setState({selectedTask: task});
-    }
+    selectTask = (task) => this.setState({selectedTask: task})
 
     componentDidMount() {
         // ako je ulogovani user student, dajemo mu dugme da pokrene proces
@@ -35,10 +33,8 @@ class Camunda extends React.Component {
 
     updateTasks = () => {
         axios.get(MY_TASKS_URL, { withCredentials: true })
-            .then(response => {
-                this.setState({ tasks: response.data, selectedTask: false });
-            })
-            .catch(response => console.log({response}));
+            .then(response => this.setState({ tasks: response.data, selectedTask: false }))
+            .catch(console.log);
     }
 
     handleStartProcess = () => {
@@ -54,20 +50,33 @@ class Camunda extends React.Component {
             .catch(console.log);
     }
 
+    handleUnclaimTask = () => {
+        const url = `${TASKS_URL}/${this.state.selectedTask.id}/unclaim`;
+        axios.post(url, {}, { withCredentials: true })
+            .then(this.updateTasks)
+            .catch(console.log);
+    }
+
     render() {
         let workspace = <div className="WorkSpace"></div>;
         if (this.state.selectedTask) {
             const { name, createTime, assignee, formKey } = this.state.selectedTask;
-            workspace = (
+            let assigneeField;
+            if (!assignee) 
+                assigneeField =  
+                    (<button ref="claimTaskBtn" name="claimTask"
+                        onClick={this.handleClaimTask}>Claim</button>);
+            else if (assignee === this.state.loggedInUser.id && this.state.loggedInUser.groups[0] !== 'student') 
+                assigneeField =
+                    (<button ref="unclaimTaskBtn" name="unclaimTask"
+                        onClick={this.handleUnclaimTask}>Unclaim</button>);
+            else 
+                assigneeField = '♞' + assignee;
+
+                workspace = (
                 <div className="WorkSpace">
-                    <span style={{ float: 'right' }}>{assignee  
-                        ? '♞' + assignee 
-                        : <button 
-                            ref="claimTaskBtn"
-                            name="claimTask"
-                            onClick={this.handleClaimTask}>
-                            Claim
-                            </button>}
+                    <span style={{ float: 'right' }}>
+                        {assigneeField }
                     </span>
                     <h3 style={{ float: 'left' }} className="title">{name}</h3>
                     <div style={{ clear: 'both' }} />

@@ -11,12 +11,6 @@ class App extends React.Component {
 
     this.state = {
       loggedInUser: JSON.parse(sessionStorage.getItem('loggedInUser')),
-      // loggedInUser: {
-      //   id: 'demo',
-      //   firstName: 'demo',
-      //   lastName: 'demo',
-      //   email: 'demo',
-      // },
     }
   }
 
@@ -31,8 +25,7 @@ class App extends React.Component {
   }
 
   render() {
-    // console.log('oooh erneesto');
-    
+    console.log('oooh erneesto');
     const loggedInUser = this.state.loggedInUser;
     
     const content = loggedInUser ?

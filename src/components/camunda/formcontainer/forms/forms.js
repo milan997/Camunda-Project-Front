@@ -8,6 +8,7 @@ import Task05 from './Task05';
 import Task06 from './Task06';
 import Task07A from './Task07A';
 import Task07B from './Task07B';
+import Task07C from './Task07C';
 import Task08 from './Task08';
 import Task09 from './Task09';
 import Task10 from './Task10';
@@ -31,6 +32,7 @@ const getFormFromFormKey = (formKey) => {
         case '/Task06.html': return <Task06 />;
         case '/Task07A.html': return <Task07A />;
         case '/Task07B.html': return <Task07B />;
+        case '/Task07C.html': return <Task07C />;
         case '/Task08.html': return <Task08 />;
         case '/Task09.html': return <Task09 />;
         case '/Task10.html': return <Task10 />;

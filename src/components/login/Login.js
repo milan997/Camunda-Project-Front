@@ -10,13 +10,10 @@ class Login extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    // TODO prebaciti login logiku na App komponentu, ima vise smisla
-    // logout cemo uraditi tamo odma
+    
     axios.post(LOGIN_URL, this.state, { withCredentials: true })
-      .then(response => {
-        this.props.logIn(response.data);
-      })
-      .catch(error => this.showErrorMsg());
+      .then(response => this.props.logIn(response.data))
+      .catch(this.showErrorMsg);
   }
 
   showErrorMsg = () => this.refs.errorMsg.style.display = 'block';

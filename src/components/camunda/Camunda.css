@@ -22,7 +22,7 @@
     to   { opacity: 1; }
 }
 
-.Camunda button[name="claimTask"] {
+.Camunda button[name="claimTask"], .Camunda button[name="unclaimTask"] {
     font-size: inherit;
     font-family: inherit;
     background-color: rgb(255, 70, 70);

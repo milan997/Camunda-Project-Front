@@ -8,7 +8,6 @@ import './Nav.css';
 class Nav extends React.Component { 
 
   handleClick = () => {
-    // axios.post(url[, data[, config]])
     axios.post(LOGOUT_URL, {}, { withCredentials: true });
     this.props.logOut();
   } 
